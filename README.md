@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/repo_icon.png" width="160" alt="Timely Machine icon">
+</p>
+
 # ⏱️ Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
 
 Official code release for **Timely Machine**, including the evaluation framework and the RL training code.

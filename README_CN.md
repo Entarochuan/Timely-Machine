@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="assets/repo_icon.png" width="160" alt="Timely Machine icon">
+</p>
+
 # ⏱️ Timely Machine: Awareness of Time Makes Test-Time Scaling Agentic
 
 **Timely Machine** 的官方开源代码，包含评测框架和 RL 训练代码。

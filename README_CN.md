@@ -2,7 +2,7 @@
   <img src="assets/repo_icon.png" width="220" alt="Timely Machine icon">
 </p>
 
-<h1 align="center">⏱️ Timely Machine</h1>
+<h1 align="center">Timely Machine</h1>
 
 <p align="center">
   <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
@@ -15,7 +15,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2601.16486">📄 Paper</a> ·
   <a href="README.md">🌐 English README</a> ·
-  <a href="src/timely_eval">🧪 Eval Package</a> ·
+  <a href="src/timely_eval">📊 Eval Package</a> ·
   <a href="rl/internbootcamp_v2">🏋️ RL Code</a> ·
   <a href="rl/internbootcamp_v2/README.md">📘 RL README</a>
 </p>
@@ -39,7 +39,7 @@
 <table>
   <tr>
     <td width="50%">
-      <h3>🧪 Timely Eval</h3>
+      <h3>📊 Timely Eval</h3>
       <p><strong>用于复现实验评测。</strong></p>
       <p>可安装的评测包和 CLI，覆盖通用推理、Agentic ML 和 Interactive Jericho。</p>
       <p><code>src/timely_eval/</code><br><code>timely-eval ...</code></p>
@@ -57,7 +57,7 @@
 
 <a id="timely-eval"></a>
 
-## 🧪 Timely Eval: 评测套件
+## 📊 Timely Eval: 评测套件
 
 Timely Eval 是本仓库中轻量、可安装的评测包，支持 OpenAI-compatible API endpoint，也支持本地 vLLM/SGLang 服务。
 

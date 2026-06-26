@@ -2,7 +2,7 @@
   <img src="assets/repo_icon.png" width="220" alt="Timely Machine icon">
 </p>
 
-<h1 align="center">⏱️ Timely Machine</h1>
+<h1 align="center">Timely Machine</h1>
 
 <p align="center">
   <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
@@ -15,7 +15,7 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2601.16486">📄 Paper</a> ·
   <a href="README_CN.md">🌐 中文说明</a> ·
-  <a href="src/timely_eval">🧪 Eval Package</a> ·
+  <a href="src/timely_eval">📊 Eval Package</a> ·
   <a href="rl/internbootcamp_v2">🏋️ RL Code</a> ·
   <a href="rl/internbootcamp_v2/README.md">📘 RL README</a>
 </p>
@@ -46,7 +46,7 @@ This repository has two intentionally separate parts. Use **Timely Eval** if you
 <table>
   <tr>
     <td width="50%">
-      <h3>🧪 Timely Eval</h3>
+      <h3>📊 Timely Eval</h3>
       <p><strong>Use this for evaluation.</strong></p>
       <p>Installable package and CLI for General Reasoning, Agentic ML, and Interactive Jericho evaluation.</p>
       <p><code>src/timely_eval/</code><br><code>timely-eval ...</code></p>
@@ -64,7 +64,7 @@ This repository has two intentionally separate parts. Use **Timely Eval** if you
 
 <a id="timely-eval"></a>
 
-## 🧪 Timely Eval: Evaluation Suite
+## 📊 Timely Eval: Evaluation Suite
 
 Timely Eval is the lightweight, installable evaluation package in this release. It supports OpenAI-compatible API endpoints, including local vLLM/SGLang servers.
 

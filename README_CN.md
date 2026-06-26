@@ -28,6 +28,7 @@
 
 ## What's New
 
+- **2026.06** Timely Machine 被 ACL 2026 录用，并被评为 Oral presentation。
 - **2026.06** 发布 Timely Eval、Timely RL、toy examples、单测和 smoke-test 说明。
 - **2026.06** README 拆分为英文主页和中文说明。
 - **2026.06** 文档和运行方式中明确区分 Eval 与 RL。

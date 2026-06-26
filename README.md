@@ -35,6 +35,7 @@ We introduce **Timely-Eval**, covering high-frequency tool calls, low-frequency 
 
 ## What's New
 
+- **2026.06** Timely Machine was accepted to ACL 2026 and selected for an Oral presentation.
 - **2026.06** Initial open-source release with Timely Eval, Timely RL, toy examples, tests, and smoke-tested launch notes.
 - **2026.06** README split into English and Chinese versions.
 - **2026.06** Eval and RL code paths are separated in documentation and runtime setup.

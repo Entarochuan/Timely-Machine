@@ -2,11 +2,7 @@
   <img src="assets/repo_icon.png" width="220" alt="Timely Machine icon">
 </p>
 
-<h1 align="center">Timely Machine</h1>
-
-<p align="center">
-  <strong>ACL 2026 Oral</strong>
-</p>
+<h1 align="center">Timely Machine · ACL 26 Oral</h1>
 
 <p align="center">
   <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
@@ -54,17 +50,28 @@ This repository has two intentionally separate parts. Use **Timely Eval** if you
       <p><strong>Use this for evaluation.</strong></p>
       <p>Installable package and CLI for General Reasoning, Agentic ML, and Interactive Jericho evaluation.</p>
       <p><code>src/timely_eval/</code><br><code>timely-eval ...</code></p>
-      <p><a href="#timely-eval">Eval quick start</a></p>
+      <p><a href="#timely-eval">Eval setup & quick start</a></p>
     </td>
     <td width="50%">
       <h3>🏋️ Timely RL</h3>
       <p><strong>Use this for training.</strong></p>
       <p>Training code, local environment servers, distributed tool backend, and verl-based RL pipeline.</p>
       <p><code>rl/internbootcamp_v2/</code><br><code>scripts/run_llm_timer_rl_example.sh</code></p>
-      <p><a href="#timely-rl">RL quick start</a></p>
+      <p><a href="#timely-rl">RL setup & quick start</a></p>
     </td>
   </tr>
 </table>
+
+## Repository Structure
+
+```text
+src/timely_eval/                 # Timely Eval package and CLI
+examples/                        # Synthetic toy data and prompts for smoke tests
+tests/                           # Unit tests for eval utilities
+rl/internbootcamp_v2/            # Timely RL training code and local verl stack
+rl/internbootcamp_v2/README.md   # RL-specific setup and launch notes
+assets/                          # README figures and paper assets
+```
 
 <a id="timely-eval"></a>
 
@@ -84,44 +91,9 @@ Interactive games time-performance experiment:
   <img src="assets/interactive_games_time_performance.png" width="92%" alt="Interactive games time-performance experiment">
 </p>
 
-<a id="timely-rl"></a>
+### Setup
 
-## 🏋️ Timely RL: Training Pipeline
-
-Timely RL is the training-side code. It is heavier than the eval package and has separate dependencies, runtime services, and launch scripts.
-
-<p align="center">
-  <img src="assets/RL_pipeline%20%281%29.png" width="92%" alt="Timely Machine RL pipeline">
-</p>
-
-The main RL entrypoint is:
-
-```text
-rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
-```
-
-Typical RL launch order:
-
-1. Start one task environment server: general timer, Agentic ML timer, or Jericho.
-2. Start the distributed tool backend with `scripts/run_llm_timer_tool_server.sh`.
-3. Start training with `scripts/run_llm_timer_rl_example.sh`.
-
-See [rl/internbootcamp_v2/README.md](rl/internbootcamp_v2/README.md) for RL-specific setup and smoke-test notes.
-
-## Repository Structure
-
-```text
-src/timely_eval/                 # Timely Eval package and CLI
-examples/                        # Synthetic toy data and prompts for smoke tests
-tests/                           # Unit tests for eval utilities
-rl/internbootcamp_v2/            # Timely RL training code and local verl stack
-rl/internbootcamp_v2/README.md   # RL-specific setup and launch notes
-assets/                          # README figures and paper assets
-```
-
-## Setup
-
-Install Timely Eval:
+Install the Timely Eval package:
 
 ```bash
 cd OpenSource
@@ -153,9 +125,9 @@ export NO_PROXY="127.0.0.1,localhost"
 export no_proxy="127.0.0.1,localhost"
 ```
 
-## Eval Quick Start
+### Quick Start
 
-### General Reasoning
+#### General Reasoning
 
 Input JSONL:
 
@@ -199,7 +171,7 @@ timely-eval general \
   --model <MODEL_NAME>
 ```
 
-### Agentic ML
+#### Agentic ML
 
 Agentic ML expects:
 
@@ -241,7 +213,7 @@ timely-eval agentic-ml \
   --time-limit-probs 1.0 2.0 3.0
 ```
 
-### Interactive Jericho
+#### Interactive Jericho
 
 Interactive evaluation requires a local game file such as `zork1.z5`.
 
@@ -265,14 +237,36 @@ timely-eval interactive \
   --max-steps 30 50 100 200
 ```
 
-## RL Quick Start
+<a id="timely-rl"></a>
 
-The RL code is not installed by the Timely Eval setup above. Use the RL README for the full environment.
+## 🏋️ Timely RL: Training Pipeline
+
+Timely RL is the training-side code. It is heavier than the eval package and has separate dependencies, runtime services, and launch scripts. It is not installed by the Timely Eval setup above.
+
+<p align="center">
+  <img src="assets/RL_pipeline%20%281%29.png" width="92%" alt="Timely Machine RL pipeline">
+</p>
+
+The main RL entrypoint is:
+
+```text
+rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
+```
+
+### Setup and Quick Start
+
+Use the RL README for the full environment, task servers, backend server, and launch scripts:
 
 ```bash
 cd rl/internbootcamp_v2
 less README.md
 ```
+
+Typical RL launch order:
+
+1. Start one task environment server: general timer, Agentic ML timer, or Jericho.
+2. Start the distributed tool backend with `scripts/run_llm_timer_tool_server.sh`.
+3. Start training with `scripts/run_llm_timer_rl_example.sh`.
 
 Smoke-test status:
 

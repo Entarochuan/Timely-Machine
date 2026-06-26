@@ -2,11 +2,7 @@
   <img src="assets/repo_icon.png" width="220" alt="Timely Machine icon">
 </p>
 
-<h1 align="center">Timely Machine</h1>
-
-<p align="center">
-  <strong>ACL 2026 Oral</strong>
-</p>
+<h1 align="center">Timely Machine · ACL 26 Oral</h1>
 
 <p align="center">
   <strong>Awareness of Time Makes Test-Time Scaling Agentic</strong>
@@ -47,17 +43,28 @@
       <p><strong>用于复现实验评测。</strong></p>
       <p>可安装的评测包和 CLI，覆盖通用推理、Agentic ML 和 Interactive Jericho。</p>
       <p><code>src/timely_eval/</code><br><code>timely-eval ...</code></p>
-      <p><a href="#timely-eval">Eval quick start</a></p>
+      <p><a href="#timely-eval">Eval setup & quick start</a></p>
     </td>
     <td width="50%">
       <h3>🏋️ Timely RL</h3>
       <p><strong>用于训练 timer-aware agent。</strong></p>
       <p>训练代码、环境 server、分布式 tool backend 和本地 verl 训练管线。</p>
       <p><code>rl/internbootcamp_v2/</code><br><code>scripts/run_llm_timer_rl_example.sh</code></p>
-      <p><a href="#timely-rl">RL quick start</a></p>
+      <p><a href="#timely-rl">RL setup & quick start</a></p>
     </td>
   </tr>
 </table>
+
+## 目录结构
+
+```text
+src/timely_eval/                 # Timely Eval 包和 CLI
+examples/                        # 用于 smoke test 的合成 toy data/prompt
+tests/                           # Eval 单测
+rl/internbootcamp_v2/            # Timely RL 训练代码和本地 verl 训练栈
+rl/internbootcamp_v2/README.md   # RL 安装和启动说明
+assets/                          # README 图片和论文素材
+```
 
 <a id="timely-eval"></a>
 
@@ -77,42 +84,7 @@ Interactive games time-performance 实验图：
   <img src="assets/interactive_games_time_performance.png" width="92%" alt="Interactive games time-performance experiment">
 </p>
 
-<a id="timely-rl"></a>
-
-## 🏋️ Timely RL: 训练管线
-
-Timely RL 是训练侧代码，比 Eval 包更重，有独立依赖、运行时服务和启动脚本。
-
-<p align="center">
-  <img src="assets/RL_pipeline%20%281%29.png" width="92%" alt="Timely Machine RL pipeline">
-</p>
-
-RL 主入口：
-
-```text
-rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
-```
-
-典型启动顺序：
-
-1. 启动一个任务环境 server：general timer、Agentic ML timer 或 Jericho。
-2. 启动分布式 tool backend：`scripts/run_llm_timer_tool_server.sh`。
-3. 启动训练：`scripts/run_llm_timer_rl_example.sh`。
-
-RL 详细说明见 [rl/internbootcamp_v2/README.md](rl/internbootcamp_v2/README.md)。
-
-## 目录结构
-
-```text
-src/timely_eval/                 # Timely Eval 包和 CLI
-examples/                        # 用于 smoke test 的合成 toy data/prompt
-tests/                           # Eval 单测
-rl/internbootcamp_v2/            # Timely RL 训练代码和本地 verl 训练栈
-rl/internbootcamp_v2/README.md   # RL 安装和启动说明
-assets/                          # README 图片和论文素材
-```
-
-## 安装 Eval
+### 安装
 
 ```bash
 cd OpenSource
@@ -144,9 +116,9 @@ export NO_PROXY="127.0.0.1,localhost"
 export no_proxy="127.0.0.1,localhost"
 ```
 
-## Eval Quick Start
+### Quick Start
 
-### 通用推理评测
+#### 通用推理评测
 
 数据格式为 JSONL，每行包含：
 
@@ -190,7 +162,7 @@ timely-eval general \
   --model <MODEL_NAME>
 ```
 
-### Agentic ML 评测
+#### Agentic ML 评测
 
 Agentic ML 需要：
 
@@ -232,7 +204,7 @@ timely-eval agentic-ml \
   --time-limit-probs 1.0 2.0 3.0
 ```
 
-### Jericho 交互评测
+#### Jericho 交互评测
 
 需要本地游戏文件，例如 `zork1.z5`：
 
@@ -256,14 +228,36 @@ timely-eval interactive \
   --max-steps 30 50 100 200
 ```
 
-## RL Quick Start
+<a id="timely-rl"></a>
 
-RL 不通过上面的 Eval 安装流程安装。完整环境请看 RL README：
+## 🏋️ Timely RL: 训练管线
+
+Timely RL 是训练侧代码，比 Eval 包更重，有独立依赖、运行时服务和启动脚本，不通过上面的 Eval 安装流程安装。
+
+<p align="center">
+  <img src="assets/RL_pipeline%20%281%29.png" width="92%" alt="Timely Machine RL pipeline">
+</p>
+
+RL 主入口：
+
+```text
+rl/internbootcamp_v2/internbootcamp/bootcamps/Basic_LLM_timer
+```
+
+### 安装与 Quick Start
+
+完整环境、任务 server、backend server 和训练脚本请看 RL README：
 
 ```bash
 cd rl/internbootcamp_v2
 less README.md
 ```
+
+典型启动顺序：
+
+1. 启动一个任务环境 server：general timer、Agentic ML timer 或 Jericho。
+2. 启动分布式 tool backend：`scripts/run_llm_timer_tool_server.sh`。
+3. 启动训练：`scripts/run_llm_timer_rl_example.sh`。
 
 Smoke-test 状态：
 
